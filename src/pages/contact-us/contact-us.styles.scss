@@ -1,0 +1,274 @@
+.contactUs {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15rem 20rem 5rem 35rem;
+  font-family: inherit;
+
+  @media only screen and (max-width: $bp-small) {
+    margin-top: 12rem;
+  }
+
+
+  .home {
+    position: absolute;
+    right: 0;
+    padding-top: 2rem;
+    padding-right: 2rem;
+    font-size:2.4rem;
+
+    a svg {
+      color: var(--best-color-grey);
+      &:hover {
+        color: black;
+      }
+    }
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    padding: 5rem 8rem 5rem 23rem;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    padding: 5rem 3rem 5rem 18rem;
+  }
+  @media only screen and (max-width: $bp-small) {
+    padding: 2rem;
+  }
+
+  & .content {
+    height: 50rem;
+    background-color: white;
+    width: 100%;
+    position: relative;
+    box-shadow: -3px -3px 7px transparent, 3px 3px 5px rgba(94, 104, 121, 0.288);
+    border: 3px solid var(--color-grey-light-2);
+    @media only screen and (max-width: $bp-small) {
+      height: auto;
+      margin-bottom: 2rem;
+    }
+    &-contactInfo {
+      width: 30rem;
+      height: 40rem;
+      position: absolute;
+      top: 5rem;
+      left: -15rem;
+      background: var(--gradient-color);
+      box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, 0.288);
+      padding: 2rem 0 2rem 2rem;
+      animation: slide-info-left 2s cubic-bezier(.33, .64, .67, .65) both;
+
+      @media only screen and (max-width: $bp-small) {
+        //top: auto;
+        //bottom: 0;
+        //left: 50%;
+        //transform: translateX(50%);
+        display: none;
+      }
+
+
+      h1 {
+        text-align: center;
+        margin-bottom: 3rem;
+        font-size: 3rem;
+        margin-left: -3rem;
+        color: black;
+      }
+
+      .info {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        color: rgba(0, 0, 0, 1);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover, &:hover span svg {
+          color: rgba(0, 0, 0, 1);
+        }
+
+        span {
+          margin-left: 1rem;
+        }
+
+        svg {
+          font-size: 1.8rem;
+          //align-self: flex-start;
+
+        }
+      }
+
+      .social-Media {
+        position: absolute;
+        bottom: .5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+
+        span {
+          svg {
+            font-size: 2.6rem;
+            color: black;
+          }
+
+          & :hover {
+            color: rgba(0, 0, 0, 1);
+          }
+        }
+
+      }
+
+    }
+
+    &-contactForm {
+      //background-color: red;
+      margin-left: 15rem;
+      margin-top: 3rem;
+      padding-left: 4rem;
+      @media only screen and (max-width: $bp-small) {
+        margin: 0;
+        margin-bottom: 2rem;
+      }
+
+
+      & h1 {
+        text-align: left;
+        margin-bottom: 3rem;
+        font-size: 2.8rem;
+        color: var(--best-color-grey);
+        //color: var(--color-primary-dark);
+        //color: var(--best-color-grey);
+        @media only screen and (max-width: $bp-small) {
+          padding-top: 2rem;
+        }
+      }
+
+      .formBlock {
+        display: grid;
+        grid-template-rows: repeat(3, 8rem);
+        grid-template-columns: repeat(2, 1fr);
+
+        @media only screen and (max-width: $bp-small) {
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(5, 8rem);
+
+        }
+
+        .textarea {
+          grid-column: 1/-1;
+        }
+
+        button {
+          width: 15rem;
+          height: 5rem;
+          background-color: black;
+          color: white;
+          font-size: 1.5rem;
+          font-family: inherit;
+          letter-spacing: .2rem;
+          border: 1px solid transparent;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all .3s;
+          position: relative;
+          overflow: hidden;
+          margin-top: 1rem;
+          z-index: 1;
+
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 3%;
+            height: 100%;
+            background-image: linear-gradient(to right ,var(--color-primary-dark), var(--color-primary));
+            left: 0;
+            transition: .8s;
+            z-index: -1;
+          }
+          &:hover {
+            color: white;
+          }
+          &:hover:after {
+            width: 180%;
+
+          }
+
+          &:focus {
+            background-color: var(--color-primary-dark);
+            border: var(--line);
+            outline: none;
+            color: black;
+          }
+
+        }
+
+        .form-group {
+          padding-right: 2rem;
+          position: relative;
+
+          input, textarea {
+            width: 100%;
+            padding: .5rem 0;
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: #333;
+            border: none;
+            border-bottom: .1rem solid #777;
+            outline: none;
+            resize: none;
+            position: relative;
+          }
+
+          input:focus ~ .in-label,
+          input:valid ~ .in-label,
+          textarea:focus ~ .in-label,
+          textarea:valid ~ .in-label, {
+            transform: translateY(-2rem);
+            font-size: 1.8rem;
+            font-weight: 400;
+            letter-spacing: .1rem;
+            color: black;
+          }
+
+          .in-label {
+            position: absolute;
+            top: -.6rem;
+            left: 0;
+            font-size: 1.5rem;
+            color: #333;
+            transition: 0.5s;
+            pointer-events: none;
+          .etoile {
+            color: var(--color-primary);
+          }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+@keyframes slide-info-left {
+  0% {
+    transform: translateX(-400px);
+  }
+  18% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

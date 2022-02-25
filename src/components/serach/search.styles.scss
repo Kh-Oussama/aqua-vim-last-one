@@ -1,0 +1,133 @@
+
+.search-component {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(0,0,0,0.7);
+  z-index: 11111111111111111;
+  overflow-y: scroll;
+
+
+
+
+  .close-btn {
+    @media only screen and (max-width: $bp-small) {
+      right: 4.5rem;
+      top: 4.5rem;
+    }
+    position: absolute;
+    right: 8.5rem;
+    top: 4.5rem;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  .search-data {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 5rem;
+    width: 40rem;
+    display: flex;
+    text-align: center;
+    .line {
+      position: absolute;
+      height: .3rem;
+      width: 100%;
+      background: #fff;
+      bottom: 0;
+    }
+    & svg {
+      color: white;
+      position: absolute;
+      width: 5rem;
+      font-size: 2.5rem;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      line-height: 4.5rem;
+      cursor: pointer;
+    }
+    & input {
+      height: 100%;
+      width: 100%;
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: white;
+    }
+    & label {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: rgba(255,255,255, 0.7);
+      font-size: 2rem;
+    }
+    & input:valid ~ label {
+      display: none;
+    }
+  }
+
+  .result-section {
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 40rem;
+    width: 80%;
+    //background-color: rgba(255,255,255,0.3);
+    overflow-y:scroll ;
+    @media only screen and (max-width: $bp-small) {
+    width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.s-product-card {
+
+  max-width: 100%;
+  width: 100%;
+
+  @media only screen and (max-width: $bp-medium) {
+    max-width: 80rem;
+    width: 100%;
+  }
+  @media only screen and (max-width: $bp-small) {
+    max-width: 37rem;
+  width: 37rem;
+    height: 44rem !important;
+  }
+
+
+
+}
+
+.s-subtitle {
+  margin: 0 0 .2rem 0 !important;
+}
+
+.s-event-data {
+
+  svg {
+    fill: white;
+    height: 10rem;
+
+  }
+}
+
+.post-data-p {
+  flex: 1 !important;
+
+}

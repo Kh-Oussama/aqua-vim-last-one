@@ -1,0 +1,62 @@
+.download-section {
+    height: 50rem;
+    background-image: linear-gradient(to left bottom, rgba(#000, 0.7),rgba(#000, 0.7)),
+    url(bois.jpg);
+    //background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: left !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 !important;
+
+
+
+    .download-layer {
+
+        align-self: flex-start;
+    }
+
+    .download-title {
+        margin-top: 5rem;
+    }
+
+}
+
+.title_2_download {
+    //color: white !important;
+
+}
+.title_1_download {
+    color: white;
+    line-height: 1.2;
+    text-align: center;
+
+}
+
+.paragraph_download {
+    color: white;
+    line-height: 1.4 !important;
+    @media only screen and (max-width: $bp-smallest) {
+        width: 90%;
+        line-height: 1.2 !important;
+
+    }
+}
+
+.content__text--btn-download {
+
+    a {
+        width: 25rem;
+        padding: 1.3rem;
+        text-align: center;
+
+        svg {
+            margin-right: 1rem;
+        }
+    }
+
+}

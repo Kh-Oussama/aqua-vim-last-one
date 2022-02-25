@@ -1,0 +1,124 @@
+.partners-section {
+  margin-top: 10rem;
+  text-align: center;
+  padding: 5rem 0;
+  &-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  //border: var(--line);
+
+  .paragraph {
+    //line-height: 1.2;
+
+  }
+}
+
+.title_1 {
+  margin-top: 1.6rem;
+  font-size: 3.4rem;
+  margin-bottom: 1rem;
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+  //line-height: 1.2;
+  @media only screen and (max-width: $bp-small-1) {
+    font-size: 2.8rem;
+  }
+  @media only screen and (max-width: $bp-smallest) {
+    width: 90%;
+    //line-height: 1.2;
+  }
+
+
+}
+
+.title_2 {
+  color: var(--color-primary);
+  font-size: 2.2rem;
+  text-transform: capitalize;
+}
+
+.red-divider {
+  width: 100px;
+  height: 2px;
+  background: var(--color-primary);
+  margin: 0 auto;
+
+}
+
+.paragraph {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  @media only screen and (max-width: $bp-small-1) {
+    font-size: 1.6rem;
+    margin-top: .7rem;
+    width: 90%;
+    //line-height: 1.2 !important;
+  }
+
+}
+
+.carts {
+  padding-top: 6rem;
+  display: flex;
+  justify-content: space-around;
+  height: 35rem;
+
+  &__cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: var(--line);
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, 0.288);
+    padding: 5rem;
+    cursor: pointer;
+    position: relative;
+
+    @media only screen and (max-width: $bp-smallest) {
+      min-width: 100%;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      height: 0;
+      width: .4rem;
+      transition: all .3s;
+      background-image: linear-gradient(to Bottom ,var(--color-primary-dark), var(--color-primary));
+
+    }
+
+    &:hover {
+      &::before {
+        height: 100%;
+
+      }
+
+      .red-divider {
+        background: #999;
+      }
+    }
+
+    &--img {
+      height: 4rem;
+
+    }
+
+    &--title {
+      text-transform: uppercase;
+      font-size: 1.8rem;
+      color: #4a4a4a;
+      padding-top: 1rem;
+    }
+
+  }
+}
+
+.swiper-container {
+  border: none !important;
+}

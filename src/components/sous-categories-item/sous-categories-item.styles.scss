@@ -1,0 +1,28 @@
+.sous_categories_item {
+  height: 27rem;
+  border: var(--line2);
+  text-align: center;
+  cursor: pointer;
+  transition: all .3s;
+
+  @media only screen and (max-width: $bp-smallest) {
+    margin-bottom: 3rem;
+  }
+  a {
+    text-decoration: none;
+  }
+  img {
+    height: 17.2rem;
+    max-width: 100%;
+  }
+  .title {
+    color: var(--best-color-grey);
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 0 1rem;
+  }
+  &:hover {
+    box-shadow: .2rem .8rem 1rem rgba(0, 0, 0, 0.1);
+
+  }
+}
