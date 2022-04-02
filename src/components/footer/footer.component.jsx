@@ -28,7 +28,7 @@ const Footer = ({currentConfig}) => {
                 {/*</Fade>*/}
                 <div className="footer--content-right">
                     <span><i className="fas fa-map-marked-alt"></i>Adresse : Cité Camps N 06 ilot E local 002, Dar el Beida, Alger</span>
-                    <span><i className="fas fa-map-marked-alt"></i>Adresse : Cité Camps N 06 ilot E local 002, Dar el Beida, Alger</span>
+                    <span><i className="fas fa-map-marked-alt"></i>Adresse : AquaVIM, 6 Rte Hai Mouhous,Bordj El Kiffan,ALGER</span>
                     <span><i className="fas fa-fax"/>Fax : {currentConfig.phone_number_4 ? '+213 '+currentConfig.phone_number_4 :null}</span>
                 </div>
             </div>

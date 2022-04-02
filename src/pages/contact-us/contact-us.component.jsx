@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Link, useLocation, withRouter} from "react-router-dom";
 import Footer from "../../components/footer/footer.component";
 import NavigationBar from "../../components/navigation/navigation.component";
@@ -11,9 +11,10 @@ import {toast} from "react-toastify";
 import Loader from "../../components/loader-content/loader.compoenent";
 import {selectCurrentConfig} from "../../redux/config/config.selectors";
 import Helmet from "react-helmet";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactUsPage = ({setCurrentPage, currentConfig, sendMsgStart, sendLoading, sendStatus, sendErrors, history}) => {
-
+    const recaptchaRef = React.createRef();
     const [messageCredentials, setCredentials] = useState({
         firstName: '',
         lastName: '',
@@ -24,6 +25,7 @@ const ContactUsPage = ({setCurrentPage, currentConfig, sendMsgStart, sendLoading
     });
     const {firstName, lastName, subject, email, phoneNumber, description} = messageCredentials;
     const [notifState, setNotifState] = useState(false);
+    const [recaptchaError, setRecaptchaError] = useState(false);
 
 
 
@@ -44,6 +46,10 @@ const ContactUsPage = ({setCurrentPage, currentConfig, sendMsgStart, sendLoading
 
 
     const sendMsgHandler = async () => {
+        if(!recaptchaRef.current.getValue()) {
+          return setRecaptchaError(true);
+        }
+        setRecaptchaError(false);
         const formData = new FormData();
         formData.append('firstName', firstName);
         formData.append('lastName', lastName);
@@ -209,12 +215,26 @@ const ContactUsPage = ({setCurrentPage, currentConfig, sendMsgStart, sendLoading
                                 <div className="in-label">Message <span className="etoile">*</span>:
                                 </div>
                             </div>
-                            {
-                                sendLoading
-                                    ? <div style={{width: '10rem'}}><Loader/></div>
-                                    : <button onClick={sendMsgHandler}><i className="fas fa-paper-plane"/> Envoyer</button>
+                            <div className={"button-div"}>
+                                {
+                                    recaptchaError && <span className={"capatcha-error"}>Veuillez vérifier le captcha !</span>
+                                }
+                                {
+                                    sendLoading
+                                        ? <div style={{width: '10rem'}}><Loader/></div>
+                                        : <button onClick={sendMsgHandler}><i className="fas fa-paper-plane"/> Envoyer</button>
 
-                            }
+                                }
+
+                            </div>
+
+                            <div className={"recaptcha-div"}>
+                                <ReCAPTCHA
+                                    sitekey="6LeuljsfAAAAAJZyroyiS25SzrmD-wGYZZqdEgFD"
+                                    ref={recaptchaRef}
+                                    // onChange={onChange}
+                                />
+                            </div>
                         </div>
                     </div>
 

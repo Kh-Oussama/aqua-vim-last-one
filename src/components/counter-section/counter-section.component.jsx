@@ -103,7 +103,7 @@ const CounterSection = ({currentConfig}) => {
                     </h1>
                     <p className="paragraph paragraph-2 ">
                         {/*<Fade left cascade>*/}
-                        Toujours à votre service, nous nous ebgageons à asurer le succés de nos clients du début a la
+                        Toujours à votre service, nous nous engageons à asurer le succés de nos clients du début a la
                         fin.
                         {/*</Fade>*/}
                     </p>
